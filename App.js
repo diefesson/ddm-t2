@@ -8,7 +8,7 @@ export default function App() {
     if (query == '') {
       setNewsList(await HackerNewsRepository.getAll());
     } else {
-      setNewsList(await HackerNewsRepository.search());
+      setNewsList(await HackerNewsRepository.search(query));
     }
   }
   return (

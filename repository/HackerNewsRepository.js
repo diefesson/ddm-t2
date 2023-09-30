@@ -17,7 +17,7 @@ async function getAll() {
 }
 
 async function search(query) {
-  const response = await fetch(`${baseUrl}?=${query}`);
+  const response = await fetch(`${baseUrl}?query=${query}`);
   const dto = await response.json();
   const newsList = dtoToNewsList(dto);
   return newsList;
