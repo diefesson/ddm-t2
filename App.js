@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { StatusBar, StyleSheet, View } from 'react-native';
+import { ScrollView, StatusBar, StyleSheet, View } from 'react-native';
 import HackerNewsRepository from './repository/HackerNewsRepository';
 import { SearchBar } from './components/SearchBar';
-import color from './colors';
 import NewsList from './components/NewsList';
 
 export default function App() {
@@ -18,7 +17,9 @@ export default function App() {
     <View style={styles.root}>
       <StatusBar translucent={false} />
       <SearchBar onSearch={onSearch} />
-      <NewsList newsList={newsList} />
+      <ScrollView>
+        <NewsList newsList={newsList} />
+      </ScrollView>
     </View>
   );
 }
