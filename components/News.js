@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import colors from '../colors';
+import Rating from './Rating';
 
 export default function News({ news }) {
   return (
@@ -7,6 +8,7 @@ export default function News({ news }) {
       <Text style={styles.title}>{news.title}</Text>
       <Text style={styles.author}>by {news.author}</Text>
       <Text style={styles.url}>{news.url}</Text>
+      <Rating />
     </View>
   );
 }
