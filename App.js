@@ -13,12 +13,19 @@ export default function App() {
       setNewsList(await HackerNewsRepository.search(query));
     }
   }
+  function handleRating(newsId, rating) {
+    setNewsList(
+      newsList.map((news) => {
+        return news.id == newsId ? { ...news, rating } : news;
+      })
+    );
+  }
   return (
     <View style={styles.root}>
       <StatusBar translucent={false} />
       <SearchBar onSearch={onSearch} />
       <ScrollView>
-        <NewsList newsList={newsList} />
+        <NewsList newsList={newsList} onRating={handleRating} />
       </ScrollView>
     </View>
   );

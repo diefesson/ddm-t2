@@ -8,12 +8,11 @@ import { TouchableWithoutFeedback } from 'react-native';
 
 const maxRating = 5;
 
-export default function Rating() {
-  const [rating, setRating] = useState(0);
+export default function Rating({ rating, onRating }) {
   let stars = [];
   for (let i = 1; i <= maxRating; i++) {
     stars.push(
-      <Star key={i} solid={i <= rating} onPress={() => setRating(i)} />
+      <Star key={i} solid={i <= rating} onPress={() => onRating(i)} />
     );
   }
   return <View style={styles.rating}>{stars}</View>;
